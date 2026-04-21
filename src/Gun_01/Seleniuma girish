@@ -1,0 +1,24 @@
+Meqsedimiz :
+
+Web sehifeleri acib, avtomatik shekilde elemetlere (button, input ve.s)
+tesir ederek, sanki bier istifadeciymish kimi (son istifadeci) TEST prosesini
+avtomatik shekilde aparmaqdir
+
+Bunun uchun neye ehtiyacimiz var?
+
+Baruzeri kontrol ederek, sehifede olan webelementlere tesirimizi gostere bileceyimiz
+bir metodlar hovuzuna(kitabxana) ehtiyacimiz var
+
+Baruzeri idare eden kitabxana -> Selenium Web Driver
+
+Bunu nece elde edeceyik?
+Android -> Play Store
+IOS -> Apple Store
+Java -> Maven Repository
+
+Bize lazim olan kitabxanalari 3 usul ile elde ede bilerik
+
+1. Manual olaraq komputere yuklemek, lazimli layiheye elave etmek
+2. Layihe idareetme panelinden. lazim olan kitabxana adini yazaraq elave etmek
+3. En yaxshi versiya (POM) ile, cucumber derslerinde goreceyik -> Nirvana hissemiz
+
