@@ -1,0 +1,66 @@
+Bu gune qeder Selenium ile bagli ne oyrendik?
+
+1. Html oyrenildi (asas strukturlari)
+2. WebDriver yaratmagi oyrendik
+3. Locator tapmaq ucun (ID,Name, ClassName, LinkText )
+4. TagName, GetCssValue
+5. Navigate to (forward,back)
+6. MyFunc yaradildi
+7. BaseDriver yaratdiq
+
+CssSelector ile locator(elementin yeri) tapmaga baxacayiq
+ishleme mentiqi :
+
+[atribute adi = 'deyeri']
+
+
+<div id='cid_3' > tapmaq istediyimiz elemente en yaxin saglam locator (Esas dayaq yerimiz)
+
+    <span> Salam 1 </span> // 1 seviyye ashagisi -> Ushaq (child)
+    <span> Salam 2 </span> // 1 seviyye ashagisi -> Ushaq (child)
+
+    <div> 1 seviyye ashagisi -> Ushaq (child)
+        <img src="logo.png"> 2 seviyye ashagisi -> Neve
+        <input type="text" > 2 seviyye ashagisi -> Neve
+        <div>
+            <img src="head.png"> 3 seviyye ashagisi -> Neve
+        </div>
+    </div>
+
+</div>
+CssSelector ile elementler elaqesi :
+
+    [id='cid_3'] // id-si cid_3 olan element
+    [id='cid_3'] > div // id-si cid_3 olan elementin child-i div olan element (yalniz bir seviyye altindan axtar)
+    [id='cid_3'] div // id-si cid_3 olan elementin child-i ve neveleri arasinda div olan elementler (butun seviyyelerden)
+
+    [id='cid_3'] > :nth-child(1) //id-si cid_3 olan elementin 1ci child-i
+    [data-input-type='first'] > :nth-child(1) // data-input-type='first' elementinin 1ci child-i
+
+    nth -> aciqlamasi :
+    1st
+    2nd
+    3rd
+    4th
+    5th
+    6th
+
+    n-ci th, yeni n-ci eded
+
+**************************************************
+2 alternativ var
+
+id uchun :
+
+By.CssSelector("[id='first_3']") -> By.CssSelector("#first_3")
+
+tag + diger atribute  :
+By.CssSelector("input[id='first_3']") -> By.CssSelector("input#first_3")
+
+**********************************************************
+StartWith -> bununla bashlayan    ->   ^ bu ishare ile yazanda bashlayan menasini verir     // input[class^='form']
+EndWith   -> bununla biten        ->   $ bu ishare ile yazanda sonu bununla biten demekdir  // input[class$='textbox']
+Contains  -> bunu ehtiva eden     ->   * bu isare icersinde bu soz(herf) olan demekdir      // input[class*='text']
+
+
+
