@@ -18,15 +18,16 @@ public class Sual extends BaseDriver {
         // Bu bolmede "Click Me" butonona klikleyin
         // Assert olaraq "You clicked the button!" yazisinin gorunduyunu tesdiqleyin
 
-        driver.get("https://testpages.eviltester.com/pages/basics/basic-web-page/");
+        driver.get("https://testpages.eviltester.com/pages/basics/");
+        MyFunc.wait(4);
 
-//        WebElement basicPage = driver.findElement(By.cssSelector("[class='td-sidebar-nav-active-item']"));
-//        basicPage.click();
-//        MyFunc.wait(2);
+        // href="/pages/basics/basic-web-page/"
+        WebElement basicPage = driver.findElement(By.linkText("Basic Web Page"));
+        basicPage.click();
+        MyFunc.wait(2);
 
         WebElement clickMeBtn = driver.findElement(By.cssSelector("[id='button1']"));
         clickMeBtn.click();
-        MyFunc.wait(2);
 
         WebElement clickMessage = driver.findElement(By.cssSelector("[id='click-message']"));
 
