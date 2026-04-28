@@ -1,0 +1,65 @@
+8. CssSelector
+ile ede bilmediklerimiz :
+- element uzre evvele getmek olmurdu (sonraki-alt sinif mumkun idi child ile)
+- Linktext (Partiallinktext)ile a tagindaki elementin  textine gore tapmaq olsa da
+    lakin umumi olaraq text-e gore tapa bilmirdik
+- Butun sehifede : eyni class adina mensub 4 ferqli element olarsa tapmaq olmurdu
+    (Sohbet child : parent elaqesi olmayan elemnentlerden gedir)
+
+9. Xpath
+- elementler uzre ireliye geriye getmek mumkundur
+- Her elementi gorunen yazisina (text) gore tapmaq mumkundur
+- Butun sehifede olan eyni class adli elementleri n-ci sayina gore tapa bilirik
+
+*******************************************************
+
+CssSelector : input[id='first_3'] - (Elementin duzgun locatoru)
+Xpath       : //input[@id='first_3'] - (Elementin duzgun locatoru)
+
+Yalniz ishleyishde bir ferq var deyek ki eyni element iki eded tapilib
+ : CssSelector ilk tapdigi elementden sonra axtarisi dayandirir
+ : Xpath butun sehifeni scan edib sonra elementi tapir. Bir app kimi ishlediyini dushune bilersiz
+    Html senedini arxa fonda yukleyib emeliyyatlarini edir, bele olanda ise daha deqiq netice alir
+    lakin bu ona CssSelector ile muqayisede daha yavash islemesine sebeb olur.
+
+Xpath-in iki novu var :
+
+1. Absolute : /html/body/form/div/ul/li/div/div/h1  -> "Virtual Course Registration Form" hisseni tapdi
+                Lakin bu usul cox az istifade olunur
+
+2. Relative : //input[@id='first_3'] - input-lardan id-si first_3 olan element
+              //*[@id='first_3']  - html icersinde butun taglar icesinden id-si first_3 olan element\
+              ya ulduzla butun html icerisinden ya da deqiqi tag nedirse onun icersinden axtarish edilmelidir
+              diqqet : xpath-ler yazarken telebeler arasinda en cox edilen sehv ulduzu unutmaq olub
+              @ isharesi yalniz atributlarda istifade olunur, text axtararken yazmayaq!
+
+Text-e gore axtarish :
+                //*[text()='Enroll Now'] -> 'Enroll Now' button tapildi
+                //*[text()='Student Information'] - "Student Information" hissesini tapdiq
+
+Navigating (element axtarisi uzre) :
+                //label[text()='First Name'] /.. ozunden yuxarida olan parent-e getdi /.. vasitesi ile
+                //label[text()='First Name'] / ancestor :: li[1]  evvelinde olan parent li-ye getdi
+                //label[@id='label_3']/ following :: input[2] ozunden sonraki iput hisserine getdi
+
+Shertler :
+    //*[@class='form-line' and @data-type='control_fullname']  -> ikili shert vererek element tapilmasi
+    //h2[contains (text(), 'Student')] daxilinde *bu soz olan elementi tapdiq
+    //h2[starts-with (@id,'header')]  *bu sozle bashlayan id-si olan element
+
+Sirasina gore :
+    (//li) [1] -> sirasina gore nececi list lazim idise onu tapmaq ucun
+    (//input) [last()] -> sirasina gore iputlardan sonuncu elemente
+
+//input[@type='hidden'] -> gizli olan input-lari tapdiq (html-de)
+//li[@style='display:none'] -> text node-leri tapmaq ucun istifade oluna biler
+
+
+
+
+
+
+
+
+
+
