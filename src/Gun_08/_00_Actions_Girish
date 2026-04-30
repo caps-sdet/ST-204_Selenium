@@ -1,0 +1,13 @@
+
+Bugune qeder Selenium-da oyrendik :
+Click, Sendkeys, Select
+
+Ancaq ki bize lazim ola biler :
+
+sag click, double click, hoverover, dragdrop, istiqamet duymeleri, xususi duymeler kombinasiyasi
+
+1. Bu kimi ishleri Seleniumda ne ile etmek mumkundur? (Inteview suallarindan biri)
+    Actions class(sinifi) ile mumkundur
+
+2. Nece istifade ederik?
+    Actions hereketler = new Actions(driver); // Driver ile hereketler (Actions) edeceyik
